@@ -1,0 +1,69 @@
+{
+  "name": "commandlineGist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/main/commandLine.js",
+    "dev": "npx ts-node-dev src/main/commandLine.ts",
+    "lint": "eslint 'src/**/*.ts{,x}' --fix",
+    "build": "npx gulp build --output-dir public",
+    "test": "npx jest test --no-cache --silent=false --verbose true --coverage"
+  },
+  "dependencies": {
+    "async": "3.1.1",
+    "axios": "0.19.2",
+    "command-line-args": "5.1.1",
+    "config": "^3.2.5",
+    "gists": "2.0.0"
+  },
+  "devDependencies": {
+    "@types/async": "3.0.7",
+    "@types/axios": "0.14.0",
+    "@types/command-line-args": "5.0.0",
+    "@types/config": "0.0.36",
+    "@types/jest": "25.1.2",
+    "@types/node": "13.7.1",
+    "@types/sinon": "7.5.1",
+    "@typescript-eslint/eslint-plugin": "2.19.2",
+    "@typescript-eslint/parser": "2.19.2",
+    "@typescript-eslint/typescript-estree": "2.19.2",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "gulp": "4.0.2",
+    "gulp-concat": "2.6.1",
+    "gulp-nodemon": "2.4.2",
+    "gulp-plumber": "1.2.1",
+    "gulp-typescript": "6.0.0-alpha.1",
+    "jest": "25.1.0",
+    "prettier": "1.19.1",
+    "sinon": "8.1.1",
+    "ts-jest": "25.2.0",
+    "ts-node-dev": "1.0.0-pre.44",
+    "typescript": "3.7.5"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "^#/(.+)": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testRegex": [
+      "__tests__"
+    ]
+  }
+}

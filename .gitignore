@@ -1,0 +1,18 @@
+dist
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules/*
+node_modules
+config/*.json
+!config/*-sample.json
+!config/default.json
+!config/test.json
+.vscode
+*.out
+*.pid
+coverage
+*rsa*
