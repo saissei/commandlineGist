@@ -18,3 +18,19 @@ describe('正常系テスト', () => {
     expect(called).toEqual(true);
   });
 });
+
+describe('異常系テスト', () => {
+  it('describe all list', async () => {
+    const stub: SinonStub = sinon.stub();
+    const gist: QueryGists = QueryGists.instance;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    gist.gists.list = stub;
+    stub.resolves({statusCode: 400});
+    await gist.lists();
+    const result = await gist.lists();
+    console.log(result);
+    const called: boolean = stub.called;
+    expect(called).toEqual(true);
+  });
+});

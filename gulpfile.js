@@ -40,6 +40,15 @@ gulp.task("valueObject", () => {
     .pipe(gulp.dest("dist/valueObject"));
 });
 
+gulp.task("writer", () => {
+  return gulp
+    .src(["src/writer/**/*.ts", "!src/**/**/*.test.ts"], {
+      since: gulp.lastRun('writer')
+    })
+    .pipe(tsc())
+    .pipe(plumber())
+    .pipe(gulp.dest("dist/writer"));
+});
 
 gulp.task("nodemon", callback => {
   let started = false;
@@ -75,6 +84,7 @@ gulp.task(
     "gist",
     "main",
     "valueObject",
+    "writer"
   )
 );
 
@@ -84,6 +94,7 @@ gulp.task(
     gulp.watch("src/main/**/*.ts", gulp.series("main"));
     gulp.watch("src/gist/**/*.ts", gulp.series("gist"));
     gulp.watch("src/valueObject/**/*.ts", gulp.series("valueObject"));
+    gulp.watch("src/writer/**/*.ts", gulp.series("writer"));
     callback();
   })
 );
