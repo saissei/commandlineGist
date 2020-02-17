@@ -10,7 +10,13 @@ export class QueryRaws {
     return this._instance;
   }
   public async select(uri: string): Promise<any> {
-    const rawData: AxiosResponse = await axios.get(uri);
-    return rawData.data;
+    try {
+      const rawData: AxiosResponse = await axios.get(uri);
+      return rawData.data;
+    } catch (err) {
+      console.error('error happened in select gist');
+      console.error(err);
+      return process.exit(1);
+    }
   }
 }

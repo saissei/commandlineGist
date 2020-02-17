@@ -26,7 +26,6 @@ export class QueryGists {
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public async lists(): Promise<any> {
-    console.log(this.gists.list);
     const result = await this.gists.list(this.conf.username);
     if ( result.statusCode !== 200 ) {
       return [];
