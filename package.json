@@ -11,7 +11,7 @@
     "test": "npx jest test --no-cache --silent=false --verbose true --coverage"
   },
   "dependencies": {
-    "async": "3.1.1",
+    "async": "3.2.2",
     "axios": "0.19.2",
     "command-line-args": "5.1.1",
     "config": "^3.2.5",
